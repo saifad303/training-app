@@ -18,7 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get("/noAccess", function(){
+    return view("noAccess");
+});
 
-Route::get("/products", [ProductController::class, "show"]);
-Route::get("/insert", [ProductController::class, "insert"]);
-Route::post("/submit", [ProductController::class, "submit"]);
+Route::get("/user", function(){
+    return view("user");
+});

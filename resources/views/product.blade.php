@@ -1,1 +1,0 @@
-<div>Product detail</div>
