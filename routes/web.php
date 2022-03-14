@@ -16,7 +16,7 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
-})->middleware("protectedAge");
+});
 
 Route::get("/products", [ProductController::class, "show"]);
 Route::get("/insert", [ProductController::class, "insert"]);
