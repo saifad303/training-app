@@ -21,7 +21,11 @@ class ProductController extends Controller
             "pdesc" => "required",
         ]);
 
+        return $req->input();
+    }
 
+    function update(Request $req){
+        echo "update data";
         return $req->input();
     }
 }
