@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserAuth;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,17 @@ Route::view('/noaccess','noAccessPage');
 Route::view('updateForm',"ProductUpdate");
 
 Route::put("update", [ProductController::class, "update"]);
+
+Route::view("login", "login");
+
+Route::post("postLogin", [UserAuth::class, 'login']);
+
+Route::view("profile", "profile");
+
+Route::get("logout", function(){
+    if(session()->has("user")){
+        session()->pull("user", null);
+    }
+
+    return redirect("/");
+});
